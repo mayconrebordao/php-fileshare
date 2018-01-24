@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="pt-BR" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="pt-BR" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="pt-BR"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+	<title>Exemplos úteis de uso do comando find [Dica]</title>
+
+	<!-- Meta -->
+	<meta charset="ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	
+
+	
+	
+	<link rel="canonical" href="https://www.vivaolinux.com.br/dica/Exemplos-uteis-de-uso-do-comando-find">
+
+	<link rel="shortcut icon" type="image/png" href="https://static.vivaolinux.com.br/favicon.png">
+	<link rel="icon" type="image/png" href="https://static.vivaolinux.com.br/favicon.png">
+	<link rel="image_src" href="https://static.vivaolinux.com.br/imagens/logo-vivaolinux-facebook-azul.png">
+
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/boot-style-min.css">
+	<link rel="stylesheet" href="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/font-awesome.css">
+	<link rel="stylesheet" href="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/custom12-min.css">
+	<link rel="stylesheet" href="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/prettify.css">
+
+</head> 
+
+<body class="header-fixed">
+
+
+<div class="wrapper">
+<!--=== Header ===-->    
+<div class="header header-sticky no-topbar header-fixed-shrink">
+    
+	<!-- Navbar -->
+	<div class="navbar navbar-default mega-menu" role="navigation">
+	<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="fa fa-bars"></span>
+			</button>
+		<a class="navbar-brand" href="https://www.vivaolinux.com.br/">
+			<img id="logo-header" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/logo-vol-white-sombra.png" alt="Viva o Linux">
+		</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse navbar-responsive-collapse">
+			<ul class="nav navbar-nav">
+				<!-- Home -->
+				<li class="dropdown">
+					<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Principal</a>
+					<ul class="dropdown-menu">
+						<li><a href="https://www.vivaolinux.com.br/artigos/">Artigos</a></li>
+						<li><a href="https://www.vivaolinux.com.br/conf/">Arquivos de configuração</a></li>
+						<li><a href="https://www.vivaolinux.com.br/comunidades/">Comunidades</a></li>
+						<li><a href="https://www.vivaolinux.com.br/dicas/">Dicas</a></li>
+						<li><a href="https://www.vivaolinux.com.br/screenshots/">Screenshots</a></li>
+						<li><a href="https://www.vivaolinux.com.br/scripts/">Scripts</a></li>
+						<li><a href="https://www.vivaolinux.com.br/simulado/">Simulado</a></li>
+					</ul>
+				</li>
+				<!-- End Home -->
+
+				<li><a href="https://www.vivaolinux.com.br/perguntas/">Fórum</a></li>
+
+				<!-- GNU/Linux-->
+				<li class="dropdown menu-grande">
+					<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">GNU/Linux</a>
+					<ul class="dropdown-menu">
+						<li><a href="https://www.vivaolinux.com.br/download-linux/">Download</a></li>
+						<li><a href="https://www.vivaolinux.com.br/linux/">Introdução ao Linux</a></li>
+					</ul>
+				</li>
+				<!-- End GNU/Linux-->
+
+				<!-- Enviar -->
+				<li class="dropdown">
+					<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Enviar</a>
+					<ul class="dropdown-menu">
+						<li> <a href="https://www.vivaolinux.com.br/contribuir/artigo/">Artigo</a></li>
+						<li> <a href="https://www.vivaolinux.com.br/contribuir/conf/">Arquivo de configuração</a></li>
+						<li> <a href="https://www.vivaolinux.com.br/contribuir/dicas/">Dica</a></li>
+						<li> <a href="https://www.vivaolinux.com.br/comunidades/formTopico.php?codigo=353">Evento</a></li>
+						<li> <a href="https://www.vivaolinux.com.br/comunidades/formTopico.php?codigo=232">Oportunidade de trabalho</a></li>
+						<li> <a href="https://www.vivaolinux.com.br/contribuir/perguntas/">Pergunta</a></li>
+						<li> <a href="https://www.vivaolinux.com.br/contribuir/scripts/">Script</a></li>
+						<li> <a href="https://www.vivaolinux.com.br/contribuir/screenshots/">Screenshot</a></li>
+					</ul>
+				</li>
+				<!-- End Enviar -->
+
+				<!-- Sobre -->
+				<li class="dropdown menu-grande"> 
+					<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Sobre</a>
+					<ul class="dropdown-menu">
+						<li> <a href="https://www.vivaolinux.com.br/falecom/">Contato</a></li>
+						<li> <a href="https://www.vivaolinux.com.br/anuncie/">Anuncie</a></li>
+						<li> <a href="https://www.vivaolinux.com.br/faq.php">FAQ</a></li>
+						<li> <a href="https://www.vivaolinux.com.br/privacidade/">Política de privacidade</a></li>
+						<li> <a href="https://www.vivaolinux.com.br/quemsomos/">Quem somos</a></li>
+						<li> <a href="https://www.vivaolinux.com.br/termos-de-uso/">Termos de uso</a></li>
+					</ul>
+				</li>
+				<!-- End Sobre -->
+
+				<!-- Search Block -->
+				<li>
+				<i class="search fa fa-search search-btn"></i>
+				<!-- busca google -->
+				<form method="get" action="/busca/" name="pesquisa" id="cse-search-box" accept-charset="utf-8">
+				<div class="search-open">
+					<div class="input-group animated fadeInDown">
+						<input name="cx" value="partner-pub-3535276187000580:4725058203" type="hidden">
+						<input name="cof" value="FORID:10" type="hidden">
+						<input name="ie" value="ISO-8859-1" type="hidden">
+
+						<input name="q" class="form-control" placeholder="Buscar" type="text">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="submit" data-loading-text="Enviando..."><span class="fa fa-search"></span></button>
+						</span>
+					</div>
+				</div>
+				</form>
+				<!-- busca google -->
+				</li>
+				<!-- End Search Block -->
+
+				<li><div class="topbar"><ul class="loginbar"><li><a href="https://www.vivaolinux.com.br/testarLogin.php">Login</a></li><li class="topbar-devider"></li><li><a href="https://www.vivaolinux.com.br/formCadastro.php">Cadastre-se</a></li></ul></div></li>
+
+				<li><!-- social -->
+					<ul id="socialbar">
+						<li> <a data-toggle="tooltip" data-placement="bottom" title="" href="https://www.vivaolinux.com.br/index.rdf" data-original-title="Acompanhe nosso Feed"><i class="fa fa-rss fa-2x"></i></a>
+						</li><li> <a data-toggle="tooltip" data-placement="bottom" title="" href="https://www.facebook.com/vivaolinux" target="_blank" data-original-title="Visite-nos no Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+						</li><li> <a data-toggle="tooltip" data-placement="bottom" title="" href="https://twitter.com/vivaolinux_" target="_blank" data-original-title="Siga-nos no Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
+						</li><li> <a data-toggle="tooltip" data-placement="bottom" title="" href="https://telegram.me/vivaolinuxOficial" target="_blank" data-original-title="Siga-nos no Telegram"><i class="fa fa-telegram fa-2x"></i></a>
+					</li></ul>
+				</li><!-- social -->
+
+
+			</ul>
+			</div><!--/navbar-collapse-->
+		</div>
+		</div>            
+		<!-- End Navbar -->
+</div>
+
+
+<!--=== End Header ===-->    
+
+<!--=== Content Part ===-->
+<!-- div class="container content" --> 
+<div class="container-fluid"> 
+
+<div class="row centro">
+<div class="col-md-10">
+	<!-- BANNER SKY -->
+	<div class="container-fluid centro">
+		<div id="banner-sky" class="visible-md visible-lg"><div class="figura">
+<script type="text/javascript" async="" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/ga.js"></script><script async="" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/adsbygoogle.js"></script>
+<!-- 970x90 geral -->
+<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-3535276187000580" data-ad-slot="1085253688"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div></div>
+	</div>
+
+	<div class="row">
+
+		<!-- coluna esquerda -->
+		<div class="col-md-2 esquerda visible-md visible-lg">
+
+			<div id="banner-left"><div class="figura">
+<script async="" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/adsbygoogle.js"></script>
+<!-- 160x600 geral -->
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-3535276187000580" data-ad-slot="5522126481"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div></div>
+
+		</div>
+		<!-- fim coluna esquerda -->
+
+		<!-- coluna central -->
+		<div class="col-md-10 esquerda">
+
+
+		<script language="Javascript">
+function editar(codigo) {
+   top = window.open('/comentarios/formEditarComentario.php?codigo='+ codigo, 'edit', 'width=350, height=200');
+}
+</script>
+
+<div class="breadcrumbs">
+		<ul class="pull-right breadcrumb">
+			<li> <a href="https://www.vivaolinux.com.br/index.php">Home</a>  </li>
+			<li> <a href="https://www.vivaolinux.com.br/dicas/index.php">Dicas</a>  </li>
+			<li> <a href="https://www.vivaolinux.com.br/dicas/categoriaIndex.php?codigo=1">Linux</a> 
+			</li><li> <a href="https://www.vivaolinux.com.br/dicas/verSubCategoria.php?codigo=89">Comandos</a>
+			</li><li class="active"> Exemplos úteis de uso do comando find</li>
+		</ul>
+</div>
+
+
+<div>
+
+<!-- box -->
+<div class="shadow-wrapper">
+<blockquote class="hero box-shadow shadow-effect-2">
+<h1>Exemplos úteis de uso do comando find</h1>
+
+<div class="pull-left centro margin20">
+<a href="https://www.vivaolinux.com.br/~rmnobarra" title="Perfil do usuário"><img src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/26e51488b670f.png" border="0" width="80" height="60"></a>
+</div>
+
+<p>Publicado por <a href="https://www.vivaolinux.com.br/~rmnobarra">Leonardo Silva dos Santos</a> em 01/12/2010</p>
+<p class="pull-right fonte13">[ Hits: <span class="counter fonte13">137.401</span> ]</p>
+<p>Blog: <a target="blank" rel="nofollow" href="http://www.rmnobarra.blogspot.com/">http://www.rmnobarra.blogspot.com</a> </p>
+
+
+<div class="esquerda"><a href="#" data-codigo="15513" data-tabela="dica" data-tipo="like" class="btn-like btn btn-default btn-xs rounded"><span class="likeBadge fonte11">5</span> <i class="fa fa-thumbs-o-up"></i></a> <a href="#" data-codigo="15513" data-tabela="dica" data-tipo="dislike" class="btn-like btn btn-default btn-xs rounded" disabled=""><span class="likeBadge fonte11">0</span> <i class="fa fa-thumbs-o-down"></i></a></div>
+
+<p class="visible-xs visible-sm">&nbsp;</p>
+<div class="pull-right text-right fonte12">
+<a href="https://www.vivaolinux.com.br/denuncie/index.php" title="Denunciar conteúdo"><i class="fa fa-exclamation-triangle"></i> Denuncie</a>&nbsp;&nbsp; 
+<a href="https://www.vivaolinux.com.br/addBookmark.php?tipo=dica&amp;codigo=15513" title="Adicionar aos favoritos"><i class="fa fa-plus-circle"></i> Favoritos</a>&nbsp;&nbsp;
+<a href="https://www.vivaolinux.com.br/formIndicar.php?tipo=dica&amp;codigo=15513" title="Indicar"><i class="fa fa-envelope"></i> Indicar</a>&nbsp;&nbsp;
+<a href="https://www.vivaolinux.com.br/dicas/impressora.php?codigo=15513" title="Versão para impressora"><i class="fa fa-print"></i> Impressora</a>
+</div>
+<br>
+</blockquote>
+</div>
+
+
+
+<p></p>
+
+<div id="corpoArtigo">
+<h1>Exemplos úteis de uso do comando find</h1>
+
+<div class="visible-lg visible-md visible-sm floatright" id="gad336">
+<script async="" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/adsbygoogle.js"></script>
+<!-- 336x280 artigo direita verde -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-3535276187000580" data-ad-slot="2913193654"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<br><br>
+<script async="" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/adsbygoogle.js"></script>
+<!-- 200x90 links -->
+<ins class="adsbygoogle" style="display:inline-block;width:200px;height:90px" data-ad-client="ca-pub-3535276187000580" data-ad-slot="9862152083"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+<div>
+Algumas opções do comando find.
+<br><br>
+Procurando o arquivo rita_cadillac.wmv dentro da partição /media/dados_:
+<br><br>
+<strong><i class="fa fa-usd"></i> find /media/dados_/ -name rita_cadillac.wmv -print</strong><br>
+/media/dados_/por/rita_cadillac.wmv
+<br><br>
+Procura e deleta o(s) arquivos teste.txt dentro do home do usuário lsantos:
+<br><br>
+<strong><i class="fa fa-usd"></i> find /home/lsantos/ -name teste.txt -exec rm -vf {} \;</strong><br>
+removido `/home/lsantos/teste.txt'<br>
+removido `/home/lsantos/Imagens/teste.txt'
+<br><br>
+Procura no diretório corrente arquivos modificados a 2 dias (mtime = modification time, quantos dias o conteúdo foi modificado):
+<br><br>
+<strong><i class="fa fa-usd"></i> find . -mtime 2 -print:</strong><br>
+./var/log/samba<br>
+./var/log/samba/log.smbd.1.gz<br>
+./var/log/samba/log.nmbd.1.gz<br>
+./var/log/samba/log.winbindd.1.gz<br>
+./var/log/dmesg.3.gz<br>
+./var/log/daemon.log.1
+<br><br>
+Procura no /home todos os arquivos do usuário coxinha:
+<br><br>
+<strong><i class="fa fa-usd"></i> find /home/ -user coxinha -print</strong><br>
+/home/coxinha<br>
+/home/coxinha/.bash_logout<br>
+/home/coxinha/.profile<br>
+/home/coxinha/projetos<br>
+/home/coxinha/projetos/word_end.sh<br>
+/home/coxinha/examples.desktop<br>
+/home/coxinha/.bashrc
+<br><br>
+Procura em todo o sistema arquivos com a extensão .doc e .conf:
+<br><br>
+<strong><i class="fa fa-usd"></i> find / -name '*.doc' -o -name '*.conf' -print</strong><br>
+/etc/hdparm.conf<br>
+/etc/ld.so.conf.d/libc.conf<br>
+/etc/ld.so.conf.d/GL.conf<br>
+/etc/ld.so.conf.d/i486-linux-gnu.conf<br>
+/etc/ld.so.conf.d/libasound2.conf<br>
+/etc/samba/smb.conf<br>
+/etc/samba/dhcp.conf<br>
+/etc/mke2fs.conf<br>
+/etc/logrotate.conf<br>
+/etc/usplash.conf<br>
+/etc/gtk-2.0/im-multipress.conf<br>
+/etc/resolv.conf<br>
+/etc/brltty.conf
+<br><br>
+Procura no diretório corrente arquivos maiores que 2MB (2048kb):
+<br><br>
+<strong><i class="fa fa-usd"></i> find . -size +2048 -print</strong><br>
+./lsantos/.local/share/Trash/files/Texas.zip<br>
+./lsantos/.local/share/Trash/files/Texas.jar<br>
+./lsantos/.local/share/Trash/files/09.2010.PLAYBA.Larissa.Riquelme.rar<br>
+./lsantos/.local/share/Trash/files/TBOAL.By.Amy_www.BestUnioM.Net.rar<br>
+./lsantos/.cache/google-chrome/Cache/data_2<br>
+./lsantos/.cache/google-chrome/Cache/data_3
+<br><br>
+Procura em todo o sistema arquivos que pertençam ao grupo kaluptoff:
+<br><br>
+<strong><i class="fa fa-usd"></i> find / -group kaluptoff -print</strong>
+<br><br>
+Procura no diretório corrente arquivos que não foram acessados a mais de
+ 10 dias (atime = acess time - quanto tempo o arquivo não foi acessado):
+<br><br>
+<strong><i class="fa fa-usd"></i> find . -atime +10 -print | head</strong><br>
+./lsantos/.dbus/session-bus/6fc608e49d3903580c4c5e3d4c23eebc-0<br>
+./lsantos/.local/share/gvfs-metadata/archive:host=file%253A%252F%252F%252Fmedia%252F300%252Fcursos-tutos%252Fvideo_aulas%252Fwordpress%252FWordpress%252520Volume%2525201.iso<br>
+./lsantos/.local/share/gvfs-metadata/label-filmes-c975e37a.log
+<br><br>
+Para saber quantas fotos (.jpg) existem no diretório /home/lsantos/Imagens:
+<br><br>
+<strong><i class="fa fa-usd"></i> find /home/lsantos/Imagens/ -iname "*.jpg" | wc -l</strong><br>
+8
+<br><br>
+
+See ya!
+<br><br>
+<a href="http://www.rapidsolutions.com.br/" rel="nofollow" target="_blank" "="">www.rapidsolutions.com.br</a>
+<br><br>
+</div>
+
+
+
+
+<div class="centro">
+<ul id="likebar">
+<li> <a data-toggle="tooltip" data-placement="left" href="javascript:if%20(window.open('http://www.facebook.com/sharer.php?u=http://www.vivaolinux.com.br/dica/Exemplos-uteis-de-uso-do-comando-find?',%20'_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes,width=500,height=500'))%20{}" title="" data-original-title="Compartilhar no Facebook"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+<li> <a data-toggle="tooltip" data-placement="bottom" href="javascript:if%20(window.open('https://twitter.com/share?url=http://www.vivaolinux.com.br/dica/Exemplos-uteis-de-uso-do-comando-find?',%20'_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes,width=500,height=500'))%20{}" title="" data-original-title="Compartilhar no Twitter"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+<li> <a data-toggle="tooltip" data-placement="right" href="javascript:if%20(window.open('http://plus.google.com/share?url=http://www.vivaolinux.com.br/dica/Exemplos-uteis-de-uso-do-comando-find?',%20'_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes,width=500,height=500'))%20{}" title="" data-original-title="Compartilhar no Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
+</ul>
+</div>
+
+
+<div class="rounded-2x service-block-dark text-white pad5">Outras dicas deste autor</div>
+<p class="recomendado"> <a href="https://www.vivaolinux.com.br/dica/Comando-tcpdump-exemplos-de-uso"><i class="fa fa-chevron-circle-right"></i> Comando tcpdump - exemplos de uso</a></p>
+<p class="recomendado"> <a href="https://www.vivaolinux.com.br/dica/Liberando-acesso-ao-Conectividade-Social-pelo-iptables"><i class="fa fa-chevron-circle-right"></i> Liberando acesso ao Conectividade Social pelo iptables</a></p>
+<p class="recomendado"> <a href="https://www.vivaolinux.com.br/dica/Criando-e-montando-um-arquivo-.ISO"><i class="fa fa-chevron-circle-right"></i> Criando e montando um arquivo .ISO</a></p>
+<p class="recomendado"> <a href="https://www.vivaolinux.com.br/dica/Exemplos-de-uso-do-comando-SCP"><i class="fa fa-chevron-circle-right"></i> Exemplos de uso do comando SCP</a></p>
+<p class="recomendado"> <a href="https://www.vivaolinux.com.br/dica/Regra-para-redirecionar-pacotes-entre-redes-com-IPTables"><i class="fa fa-chevron-circle-right"></i> Regra para redirecionar pacotes entre redes com IPTables</a></p>
+
+
+<div class="rounded-2x service-block-dark text-white pad5">Leitura recomendada </div>
+<p class="recomendado"> <a href="https://www.vivaolinux.com.br/dica/mii-tool-ou-ethtool-Qual-usar"><i class="fa fa-chevron-circle-right"></i> mii-tool ou ethtool: Qual usar?</a></p>
+<p class="recomendado"> <a href="https://www.vivaolinux.com.br/dica/Renomeando-arquivos-simultaneamente-com-apenas-uma-linha-de-comando"><i class="fa fa-chevron-circle-right"></i> Renomeando arquivos simultaneamente com apenas uma linha de comando</a></p>
+<p class="recomendado"> <a href="https://www.vivaolinux.com.br/dica/Selecionar-arquivos-a-partir-do-tamanho"><i class="fa fa-chevron-circle-right"></i> Selecionar arquivos a partir do tamanho</a></p>
+<p class="recomendado"> <a href="https://www.vivaolinux.com.br/dica/Usando-rm-para-apagar-arquivos-esquisitos"><i class="fa fa-chevron-circle-right"></i> Usando rm para apagar arquivos esquisitos</a></p>
+<p class="recomendado"> <a href="https://www.vivaolinux.com.br/dica/Configurar-o-mouse-desativar-o-botao-direito"><i class="fa fa-chevron-circle-right"></i> Configurar o mouse / desativar o botão direito</a></p>
+ 
+
+
+
+<div class="centro visible-lg visible-md visible-sm">
+<script async="" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/adsbygoogle.js"></script>
+<!-- 336x280 artigo direita verde -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-3535276187000580" data_ad_region="regioning" data-ad-slot="2913193654"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+&nbsp;&nbsp;
+
+<script async="" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/adsbygoogle.js"></script>
+<!-- 200x90 links -->
+<ins class="adsbygoogle" style="display:inline-block;width:200px;height:90px" data-ad-client="ca-pub-3535276187000580" data-ad-slot="9862152083"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+
+<br>
+<div class="rounded-2x service-block-dark text-white pad5">Comentários</div>
+
+<div class="comentarioItem">
+	<div id="comentario162833">
+		<span class="comentarioHeader">[1] Comentário enviado por <a href="https://www.vivaolinux.com.br/~nettask">nettask</a> em 01/12/2010 - 15:49h</span>
+		<br><br>
+		muito legal as dicas... vai ajudar muita gente que esta começando...
+	</div>
+
+	<br>
+	<div><a href="#" data-codigo="162833" data-tabela="comentario" data-tipo="like" class="btn-like btn btn-default btn-xs rounded"><span class="likeBadge fonte11">1</span> <i class="fa fa-thumbs-o-up"></i></a> <a href="#" data-codigo="162833" data-tabela="comentario" data-tipo="dislike" class="btn-like btn btn-default btn-xs rounded" disabled=""><span class="likeBadge fonte11">0</span> <i class="fa fa-thumbs-o-down"></i></a></div>
+
+	<ul class="commentBar">
+	  
+	</ul>
+
+
+	<!-- Modal -->
+	<form action="/comentarios/editarComentario.php" method="post" name="form1">
+	<div class="modal fade" id="modal-162833" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<h4 class="modal-title">Editar post</h4>
+				</div>
+
+				<div class="modal-body">
+
+					<input name="codigo" value="162833" type="hidden">
+					<input name="url" value="/dica/Exemplos-uteis-de-uso-do-comando-find" type="hidden">
+
+					<fieldset>
+
+					<div class="form-group">
+						<section>
+							<label for="comentario">Mensagem</label>
+							<textarea name="comentario" rows="8" class="form-control">muito legal as dicas... vai ajudar muita gente que esta começando...</textarea>
+						</section>
+					</div>	
+
+					</fieldset>
+
+				</div>
+			</div>	
+
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary rounded-2x" data-loading-text="Enviando...">Gravar</button>
+			</div>
+		</div>
+	</div>
+	</form>
+	<!-- Modal -->
+
+</div>
+
+<div class="comentarioItem">
+	<div id="comentario162845">
+		<span class="comentarioHeader">[2] Comentário enviado por <a href="https://www.vivaolinux.com.br/~emerson.galeli">emerson.galeli</a> em 01/12/2010 - 18:31h</span>
+		<br><br>
+		Legal os exemplos citados!<br>
+Para contribuir segue outros:<br>
+<br>
+- Fazer uma busca para criar um TAR de arquivos com mais de 1 ano:<br>
+# find /dados/ -mtime +365 -exec tar -uvf /tmp/arquivo.tar {} \;<br>
+<br>
+- Para remover arquivos de um servidor Samba onde os usuários Windows tem o hábito de usar nomes longos de com espaço:<br>
+# find /home/ -name "*.mp3" -exec /bin/rm {""} \;<br>
+<br>
+- Remover arquivos de uma área de rede temporária onde os arquivos só devem se manter por 1 semana:<br>
+# find /var/spool/tmp/ -mtime +7 -exec /bin/rm -Rf {""} \;<br>
+<br>
+
+	</div>
+
+	<br>
+	<div><a href="#" data-codigo="162845" data-tabela="comentario" data-tipo="like" class="btn-like btn btn-default btn-xs rounded"><span class="likeBadge fonte11">1</span> <i class="fa fa-thumbs-o-up"></i></a> <a href="#" data-codigo="162845" data-tabela="comentario" data-tipo="dislike" class="btn-like btn btn-default btn-xs rounded" disabled=""><span class="likeBadge fonte11">0</span> <i class="fa fa-thumbs-o-down"></i></a></div>
+
+	<ul class="commentBar">
+	  
+	</ul>
+
+
+	<!-- Modal -->
+	<form action="/comentarios/editarComentario.php" method="post" name="form1">
+	<div class="modal fade" id="modal-162845" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<h4 class="modal-title">Editar post</h4>
+				</div>
+
+				<div class="modal-body">
+
+					<input name="codigo" value="162845" type="hidden">
+					<input name="url" value="/dica/Exemplos-uteis-de-uso-do-comando-find" type="hidden">
+
+					<fieldset>
+
+					<div class="form-group">
+						<section>
+							<label for="comentario">Mensagem</label>
+							<textarea name="comentario" rows="8" class="form-control">Legal os exemplos citados!
+Para contribuir segue outros:
+
+- Fazer uma busca para criar um TAR de arquivos com mais de 1 ano:
+# find /dados/ -mtime +365 -exec tar -uvf /tmp/arquivo.tar {} \;
+
+- Para remover arquivos de um servidor Samba onde os usuários Windows tem o hábito de usar nomes longos de com espaço:
+# find /home/ -name "*.mp3" -exec /bin/rm {""} \;
+
+- Remover arquivos de uma área de rede temporária onde os arquivos só devem se manter por 1 semana:
+# find /var/spool/tmp/ -mtime +7 -exec /bin/rm -Rf {""} \;
+
+</textarea>
+						</section>
+					</div>	
+
+					</fieldset>
+
+				</div>
+			</div>	
+
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary rounded-2x" data-loading-text="Enviando...">Gravar</button>
+			</div>
+		</div>
+	</div>
+	</form>
+	<!-- Modal -->
+
+</div>
+
+<div class="comentarioItem">
+	<div id="comentario162858">
+		<span class="comentarioHeader">[3] Comentário enviado por <a href="https://www.vivaolinux.com.br/~rmnobarra">rmnobarra</a> em 01/12/2010 - 21:19h</span>
+		<br><br>
+		vlw!
+	</div>
+
+	<br>
+	<div><a href="#" data-codigo="162858" data-tabela="comentario" data-tipo="like" class="btn-like btn btn-default btn-xs rounded"><span class="likeBadge fonte11">0</span> <i class="fa fa-thumbs-o-up"></i></a> <a href="#" data-codigo="162858" data-tabela="comentario" data-tipo="dislike" class="btn-like btn btn-default btn-xs rounded" disabled=""><span class="likeBadge fonte11">0</span> <i class="fa fa-thumbs-o-down"></i></a></div>
+
+	<ul class="commentBar">
+	  
+	</ul>
+
+
+	<!-- Modal -->
+	<form action="/comentarios/editarComentario.php" method="post" name="form1">
+	<div class="modal fade" id="modal-162858" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<h4 class="modal-title">Editar post</h4>
+				</div>
+
+				<div class="modal-body">
+
+					<input name="codigo" value="162858" type="hidden">
+					<input name="url" value="/dica/Exemplos-uteis-de-uso-do-comando-find" type="hidden">
+
+					<fieldset>
+
+					<div class="form-group">
+						<section>
+							<label for="comentario">Mensagem</label>
+							<textarea name="comentario" rows="8" class="form-control">vlw!</textarea>
+						</section>
+					</div>	
+
+					</fieldset>
+
+				</div>
+			</div>	
+
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary rounded-2x" data-loading-text="Enviando...">Gravar</button>
+			</div>
+		</div>
+	</div>
+	</form>
+	<!-- Modal -->
+
+</div>
+
+<div class="comentarioItem">
+	<div id="comentario162860">
+		<span class="comentarioHeader">[4] Comentário enviado por <a href="https://www.vivaolinux.com.br/~eduardoefb">eduardoefb</a> em 01/12/2010 - 22:23h</span>
+		<br><br>
+		Show de bola!!!
+	</div>
+
+	<br>
+	<div><a href="#" data-codigo="162860" data-tabela="comentario" data-tipo="like" class="btn-like btn btn-default btn-xs rounded"><span class="likeBadge fonte11">0</span> <i class="fa fa-thumbs-o-up"></i></a> <a href="#" data-codigo="162860" data-tabela="comentario" data-tipo="dislike" class="btn-like btn btn-default btn-xs rounded" disabled=""><span class="likeBadge fonte11">0</span> <i class="fa fa-thumbs-o-down"></i></a></div>
+
+	<ul class="commentBar">
+	  
+	</ul>
+
+
+	<!-- Modal -->
+	<form action="/comentarios/editarComentario.php" method="post" name="form1">
+	<div class="modal fade" id="modal-162860" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<h4 class="modal-title">Editar post</h4>
+				</div>
+
+				<div class="modal-body">
+
+					<input name="codigo" value="162860" type="hidden">
+					<input name="url" value="/dica/Exemplos-uteis-de-uso-do-comando-find" type="hidden">
+
+					<fieldset>
+
+					<div class="form-group">
+						<section>
+							<label for="comentario">Mensagem</label>
+							<textarea name="comentario" rows="8" class="form-control">Show de bola!!!</textarea>
+						</section>
+					</div>	
+
+					</fieldset>
+
+				</div>
+			</div>	
+
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary rounded-2x" data-loading-text="Enviando...">Gravar</button>
+			</div>
+		</div>
+	</div>
+	</form>
+	<!-- Modal -->
+
+</div>
+
+<div class="comentarioItem">
+	<div id="comentario163102">
+		<span class="comentarioHeader">[5] Comentário enviado por <a href="https://www.vivaolinux.com.br/~fchevitarese">fchevitarese</a> em 06/12/2010 - 10:47h</span>
+		<br><br>
+		Ótima dica!!! ;) 
+	</div>
+
+	<br>
+	<div><a href="#" data-codigo="163102" data-tabela="comentario" data-tipo="like" class="btn-like btn btn-default btn-xs rounded"><span class="likeBadge fonte11">0</span> <i class="fa fa-thumbs-o-up"></i></a> <a href="#" data-codigo="163102" data-tabela="comentario" data-tipo="dislike" class="btn-like btn btn-default btn-xs rounded" disabled=""><span class="likeBadge fonte11">0</span> <i class="fa fa-thumbs-o-down"></i></a></div>
+
+	<ul class="commentBar">
+	  
+	</ul>
+
+
+	<!-- Modal -->
+	<form action="/comentarios/editarComentario.php" method="post" name="form1">
+	<div class="modal fade" id="modal-163102" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<h4 class="modal-title">Editar post</h4>
+				</div>
+
+				<div class="modal-body">
+
+					<input name="codigo" value="163102" type="hidden">
+					<input name="url" value="/dica/Exemplos-uteis-de-uso-do-comando-find" type="hidden">
+
+					<fieldset>
+
+					<div class="form-group">
+						<section>
+							<label for="comentario">Mensagem</label>
+							<textarea name="comentario" rows="8" class="form-control">Ótima dica!!! ;) </textarea>
+						</section>
+					</div>	
+
+					</fieldset>
+
+				</div>
+			</div>	
+
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary rounded-2x" data-loading-text="Enviando...">Gravar</button>
+			</div>
+		</div>
+	</div>
+	</form>
+	<!-- Modal -->
+
+</div>
+
+<div class="comentarioItem">
+	<div id="comentario217101">
+		<span class="comentarioHeader">[6] Comentário enviado por <a href="https://www.vivaolinux.com.br/~afstivanelli">afstivanelli</a> em 27/08/2013 - 08:52h</span>
+		<br><br>
+		Boas dicas!<br>
+<br>
+Algué saberia dar uma ajuda preciso realizar uma buscar, que localize todos arquivos com até 10 ligações diretas.<br>
+<br>
+tentei mas não deu muito certo.<br>
+<br>
+find -links 10 -exec ls -l \;
+	</div>
+
+	<br>
+	<div><a href="#" data-codigo="217101" data-tabela="comentario" data-tipo="like" class="btn-like btn btn-default btn-xs rounded"><span class="likeBadge fonte11">0</span> <i class="fa fa-thumbs-o-up"></i></a> <a href="#" data-codigo="217101" data-tabela="comentario" data-tipo="dislike" class="btn-like btn btn-default btn-xs rounded" disabled=""><span class="likeBadge fonte11">0</span> <i class="fa fa-thumbs-o-down"></i></a></div>
+
+	<ul class="commentBar">
+	  
+	</ul>
+
+
+	<!-- Modal -->
+	<form action="/comentarios/editarComentario.php" method="post" name="form1">
+	<div class="modal fade" id="modal-217101" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<h4 class="modal-title">Editar post</h4>
+				</div>
+
+				<div class="modal-body">
+
+					<input name="codigo" value="217101" type="hidden">
+					<input name="url" value="/dica/Exemplos-uteis-de-uso-do-comando-find" type="hidden">
+
+					<fieldset>
+
+					<div class="form-group">
+						<section>
+							<label for="comentario">Mensagem</label>
+							<textarea name="comentario" rows="8" class="form-control">Boas dicas!
+
+Algué saberia dar uma ajuda preciso realizar uma buscar, que localize todos arquivos com até 10 ligações diretas.
+
+tentei mas não deu muito certo.
+
+find -links 10 -exec ls -l \;</textarea>
+						</section>
+					</div>	
+
+					</fieldset>
+
+				</div>
+			</div>	
+
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary rounded-2x" data-loading-text="Enviando...">Gravar</button>
+			</div>
+		</div>
+	</div>
+	</form>
+	<!-- Modal -->
+
+</div>
+
+
+
+<!-- tabela comentario -->
+<br><br>
+<div class="service-block rounded-2x service-block-light">
+<form action="/comentarios/enviarComentario.php" method="post" name="formComentario">
+<input name="tabela" value="dica" type="hidden">
+<input name="codtabela" value="15513" type="hidden">
+
+<h1>Contribuir com comentário</h1>
+
+<div class="centro">
+<textarea name="comentario" readonly="readonly" style="width: 100%;" id="boxcomentario" rows="18" class="padrao"></textarea>
+
+<button type="submit" class="btn btn-u rounded-2x" data-loading-text="Enviando...">Enviar</button>
+</div>
+</form>
+</div>
+<!-- fim tabela comentario -->
+
+</div>
+</div>
+
+		<br><br>
+		<!-- div class="clerafix margin-bottom-50"></div -->
+
+		</div>
+		    
+	</div>
+	<!-- fim row-->
+
+</div>
+
+<!-- coluna direita -->
+<div class="col-md-2 esquerda visible-md visible-lg">
+	<br>
+	<div class="headline" style="margin-top: 0px"><h3>Patrocínio</h3></div>
+
+	<div class="blog-twitter">
+		<div class="text-center blog-twitter-inner">Site hospedado pelo provedor <a href="https://www.vivaolinux.com.br/verBanner.php?codigo=247" target="_blank" rel="nofollow">HostGator</a>.</div>
+	</div>
+
+
+	<div id="bannerRight" class="text-center">
+<div class="textosolto">
+<div style="margin-bottom: 8px;">
+	<a href="https://www.vivaolinux.com.br/verBanner.php?codigo=594" target="_blank" rel="nofollow"><img src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/banner-agit-2016-09.jpg" alt="Linux banner" border="0" width="160" height="120"></a></div>
+<div style="margin-bottom: 8px;">
+	<a href="https://www.vivaolinux.com.br/verBanner.php?codigo=496" target="_blank" rel="nofollow"><img src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/banner-treina-php.gif" alt="Linux banner" border="0" width="160" height="120"></a></div>  
+<div style="margin-bottom: 8px;">
+	<a href="https://www.vivaolinux.com.br/verBanner.php?codigo=617" target="_blank" rel="nofollow"><img src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/banner-hostgator-vaga.png" alt="Linux banner" border="0" width="160" height="120"></a></div>
+</div>
+</div>
+
+
+	<!-- Destaques -->
+	
+		<div class="headline"><h3>Destaques</h3></div>
+		<div id="destaques" class="service-block rounded-2x service-block-dark box-ultimas">
+			<p class="text-left"><a href="https://www.vivaolinux.com.br/topico/Iniciantes-no-Linux/Como-fazer-topicos-eficientes/">Como fazer tópicos eficientes! [RESOLVIDO]  (394)</a></p>
+			<p class="text-left"><a href="https://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/Linux-Developer-Conference-Brazil/">Linux Developer Conference Brazil - Campinas/SP  (1)</a></p>
+			<p class="text-left"><a href="https://www.vivaolinux.com.br/topico/Quero-ser-linuxer-senpai/Como-denunciar-um-usuario-troll/">Como denunciar um usuário troll.  (39)</a></p>
+			<p class="text-left"><a href="https://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/Workshop-Gratuito-de-Programacao-Shell-Linux/">Workshop Gratuito de Programação Shell Linux  (0)</a></p>
+			<p class="text-left"><a href="https://www.vivaolinux.com.br/topico/vivaolinux/Podcast-Do-VOL/">[Podcast] Do VOL  (37)</a></p>
+
+		</div>
+
+	<!-- End Destaques -->
+
+	<!-- Artigos -->
+	<div class="headline"><h3>Artigos</h3></div>
+	<div class="service-block rounded-2x service-block-dark box-ultimas">
+		<p><a href="https://www.vivaolinux.com.br/artigo/PFSense-Firewall-com-Squid-e-SquidGuard">PFSense Firewall com Squid e SquidGuard</a></p>
+		<p><a href="https://www.vivaolinux.com.br/artigo/Processos-no-Linux-1">Processos no Linux</a></p>
+		<p><a href="https://www.vivaolinux.com.br/artigo/ANDRAX-Pentest-usando-o-Android">ANDRAX - Pentest usando o Android</a></p>
+		<p><a href="https://www.vivaolinux.com.br/artigo/AWS-VPN-IPSEC-com-Libreswan">AWS - VPN IPSEC com Libreswan</a></p>
+		<p><a href="https://www.vivaolinux.com.br/artigo/TensorFlow-no-Kali-Linux-Rolling-Base-CPU-Mode">TensorFlow no Kali Linux (Rolling Base) CPU Mode</a></p>
+
+	</div>
+	<!-- Fim Artigos -->
+
+	<!-- Dicas -->
+	<div class="headline"><h3>Dicas</h3></div>
+	<div class="service-block rounded-2x service-block-dark box-ultimas">
+		<p><a href="https://www.vivaolinux.com.br/dica/Problema-de-conexao-usando-o-protocolo-TLS">Problema de conexão usando o protocolo TLS</a></p>
+		<p><a href="https://www.vivaolinux.com.br/dica/Configurar-um-notebook-antigo-e-funcional-como-servidor-DLNA-para-Chromecast">Configurar um notebook antigo e funcional como servidor DLNA para Chromecast</a></p>
+		<p><a href="https://www.vivaolinux.com.br/dica/Removendo-Ubuntu-Dock-do-Ubuntu-1710">Removendo "Ubuntu Dock" do Ubuntu 17.10</a></p>
+		<p><a href="https://www.vivaolinux.com.br/dica/Bug-de-audio-Pulseaudio-Resolvido">Bug de áudio - Pulseaudio [Resolvido]</a></p>
+		<p><a href="https://www.vivaolinux.com.br/dica/Calc-a-calculadora-de-linha-de-comando">Calc, a calculadora de linha de comando</a></p>
+	</div>
+	<!-- Fim Dicas -->
+
+	<!-- Viva o Android -->
+	<div class="headline"><h3>Viva o Android</h3></div>
+	<div class="service-block rounded-2x service-block-dark box-ultimas">
+		<p><a href="https://www.vivaoandroid.com.br/noticia/Aproveita-enquanto-esta-FREE-jogos-para-Android" target="_blank">Aproveita enquanto está FREE! (jogos para Android)</a></p>
+		<p><a href="https://www.vivaoandroid.com.br/artigo/Telefone-possuido-Veja-o-que-voce-pode-fazer-parte-4" target="_blank">Telefone "possuído"? Veja o que você pode fazer (parte 4)</a></p>
+		<p><a href="https://www.vivaoandroid.com.br/noticia/Um-dos-jogos-mais-populares-do-Linux-chegou-ao-Android" target="_blank">Um dos jogos mais populares do Linux chegou ao Android!</a></p>
+		<p><a href="https://www.vivaoandroid.com.br/artigo/Como-se-livrar-das-mensagens-de-correio-de-voz" target="_blank">Como se livrar das mensagens de correio de voz!</a></p>
+		<p><a href="https://www.vivaoandroid.com.br/noticia/O-que-estreia-na-Netflix-em-novembro-2017" target="_blank">O que estreia na Netflix em novembro 2017!</a></p>
+	</div>
+	<!-- Fim Viva o Android -->
+
+	<!-- Topicos -->
+	<div class="headline"><h3>Tópicos</h3></div>
+	<div class="service-block rounded-2x service-block-dark box-ultimas">
+		<p><a href="https://www.vivaolinux.com.br/topico/Navegadores/Opcoes-de-Extensoes-como-NoScript-e-FlashGot-para-Firefox-57">Opções de Extensões como NoScript e FlashGot para Firefox 57?  (9)</a></p>
+		<p><a href="https://www.vivaolinux.com.br/topico/Navegadores/Erro-ao-executar-aplicacao-Spark">Erro de Java ao executar uma aplicação  (11)</a></p>
+		<p><a href="https://www.vivaolinux.com.br/topico/openSUSE-Linux-Brasil/KDE-ou-Gnome-5">KDE ou Gnome  (0)</a></p>
+		<p><a href="https://www.vivaolinux.com.br/topico/Shell-Script/Aperfeicoar-script-de-backup">Aperfeiçoar script de backup  (0)</a></p>
+		<p><a href="https://www.vivaolinux.com.br/topico/Fedora-no-Amazonas/Codec-h264-Em-falta-nos-navegadores-Mozilla-e-Chromium">Codec h.264 'Em falta' nos navegadores Mozilla e Chromium [R... (9)</a></p>
+	</div>
+	<!-- Fim Topicos -->
+
+	<!-- Top 10-->
+	<div class="headline"><h3>Top 10 do mês</h3></div>
+	<div id="top10" class="service-block rounded-2x service-block-dark text-left" style="padding: 10px;">
+			<ul class="newsticker list-unstyled" style="height: 360px; overflow: hidden;">
+
+				
+
+				
+
+				
+
+				
+
+				
+
+				
+
+				
+
+				
+
+				<li> <a style="color: #fff" href="https://www.vivaolinux.com.br/~correalinux"><img class="img-thumbnail rounded-2x" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/1bb736cf2a697.png"><br>Lucas de M. Corrêa</a><br><span style="color: #fff">9° lugar - 20.246 pts</span> </li>
+
+				<li> <a style="color: #fff" href="https://www.vivaolinux.com.br/~magotico"><img class="img-thumbnail rounded-2x" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/1287842399.jpg"><br>Robson Fernando Gomes</a><br><span style="color: #fff">10° lugar - 19.902 pts</span> </li>
+
+
+			<li style="margin-top: 0px;"> <a style="color: #fff" href="https://www.vivaolinux.com.br/~xerxeslins"><img class="img-thumbnail rounded-2x" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/1464d1ff6ee.jpg"><br>Xerxes Lins</a><br><span style="color: #fff">1° lugar - 99.659 pts</span> </li><li style="margin-top: 0px;"> <a style="color: #fff" href="https://www.vivaolinux.com.br/~clodoaldops"><img class="img-thumbnail rounded-2x" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/klods-lee.png"><br>Clodoaldo Santos</a><br><span style="color: #fff">2° lugar - 84.657 pts</span> </li><li style="margin-top: 0px;"> <a style="color: #fff" href="https://www.vivaolinux.com.br/~Londreslondres"><img class="img-thumbnail rounded-2x" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/bfc624086d3f.jpg"><br>skjdeecedcnfncvnrfcnrncjvnjrnfvjcnjrjvcjrvcj</a><br><span style="color: #fff">3° lugar - 45.590 pts</span> </li><li style="margin-top: 0px;"> <a style="color: #fff" href="https://www.vivaolinux.com.br/~fabio"><img class="img-thumbnail rounded-2x" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/10c9eb53afc21.png"><br>Fábio Berbert de Paula</a><br><span style="color: #fff">4° lugar - 44.137 pts</span> </li><li style="margin-top: 0px;"> <a style="color: #fff" href="https://www.vivaolinux.com.br/~edps"><img class="img-thumbnail rounded-2x" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/fdfa73842224.gif"><br>edps</a><br><span style="color: #fff">5° lugar - 29.667 pts</span> </li><li style="margin-top: 0px;"> <a style="color: #fff" href="https://www.vivaolinux.com.br/~Lisandro"><img class="img-thumbnail rounded-2x" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/194b2dbbf5b9c.jpg"><br>Lisandro Guerra</a><br><span style="color: #fff">6° lugar - 28.076 pts</span> </li><li style="margin-top: 0px;"> <a style="color: #fff" href="https://www.vivaolinux.com.br/~albfneto"><img class="img-thumbnail rounded-2x" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/telapad.png"><br>Alberto Federman Neto.</a><br><span style="color: #fff">7° lugar - 27.086 pts</span> </li><li style="margin-top: 0px;"> <a style="color: #fff" href="https://www.vivaolinux.com.br/~cabelo"><img class="img-thumbnail rounded-2x" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/4fcb75802380.png"><br>Alessandro de Oliveira Faria (A.K.A. CABELO)</a><br><span style="color: #fff">8° lugar - 20.719 pts</span> </li></ul>
+	</div>
+	<!-- End Top 10-->
+
+	<!-- Scripts -->
+	<div class="headline"><h3>Scripts</h3></div>
+	<div class="service-block rounded-2x service-block-dark box-ultimas">
+		<p><a href="https://www.vivaolinux.com.br/script/Jogo-da-Senha">[HTML/Javascript] Jogo da Senha</a></p>
+		<p><a href="https://www.vivaolinux.com.br/script/Checar-valor-do-bitcoin-de-acordo-com-a-exchange">[Python] Checar valor do bitcoin de acordo com a exchange</a></p>
+		<p><a href="https://www.vivaolinux.com.br/script/Renomear-arquivos-de-fontes-ttf-e-otf">[Shell Script] Renomear arquivos de fontes ttf e otf</a></p>
+		<p><a href="https://www.vivaolinux.com.br/script/Metodo-da-bisseccao">[C/C++] Método da bissecção</a></p>
+		<p><a href="https://www.vivaolinux.com.br/script/Jogo-da-Forca-1">[HTML/Javascript] Jogo da Forca</a></p>
+	</div>
+	<!-- Fim Scripts -->
+
+
+</div>
+<!-- fim coluna direita -->
+
+
+</div>
+
+</div><!--/container-->     
+<!-- End Content Part -->
+
+
+
+
+<!--=== Footer Version 1 ===-->
+<div class="footer-v1">
+<div class="footer">
+<div class="container">
+<div class="row">
+	<!-- About -->
+	<div class="col-md-3 md-margin-bottom-40">
+
+	<a href="https://www.vivaolinux.com.br/"><img class="footer-logo" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/logo-vol-white.png" alt="Viva o Linux"></a>
+	<p>A maior comunidade GNU/Linux da América Latina! Artigos, dicas, 
+tutoriais, fórum, scripts e muito mais. Ideal para quem busca 
+auto-ajuda.</p>
+
+	</div>
+	<!-- End About -->
+
+	<!-- Links -->
+	<div class="col-md-3 md-margin-bottom-40">
+
+		<div class="posts">
+			<ul class="list-unstyled latest-list">
+				<li> <a href="https://www.vivaolinux.com.br/faq.php">FAQ - Perguntas frequentes</a></li>
+				<li> <a href="https://www.vivaolinux.com.br/estatisticas.php">Estatísticas do site</a></li>
+				<li> <a href="https://www.vivaolinux.com.br/equipe/">Equipe de moderadores</a></li>
+				<li> <a href="https://www.vivaolinux.com.br/membros/">Membros da comunidade</a></li>
+			</ul>
+		</div>
+
+	</div>
+	<!-- End Links -->
+
+	<!-- Links -->
+	<div class="col-md-3 md-margin-bottom-40">
+
+		<div class="posts">
+			<ul class="list-unstyled latest-list">
+				<li> <a href="https://www.vivaolinux.com.br/anuncie/">Anuncie</a></li>
+				<li> <a href="https://www.vivaolinux.com.br/falecom/">Contato</a></li>
+				<li> <a href="https://www.vivaolinux.com.br/privacidade/">Política de privacidade</a></li>
+				<li> <a href="https://www.vivaolinux.com.br/quemsomos/">Quem somos</a></li>
+				<li> <a href="https://www.vivaolinux.com.br/termos-de-uso/">Termos de uso</a></li>
+			</ul>
+		</div>
+
+	</div>
+	<!-- End Links -->
+
+
+	<!-- Hostgator -->
+	<div class="col-md-3 md-margin-bottom-40">
+
+		<p>Site hospedado por: </p><br>
+		<a href="https://www.vivaolinux.com.br/verBanner.php?codigo=247" target="_blank" rel="nofollow"><img src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/hostgator-2015.png" class="footer-header"></a>
+	</div>
+	<!-- End Hostgator -->
+</div>
+
+<div class="row">
+<div class="col-md-12 md-margin-bottom-40 centro">
+<br><br>
+
+<p class="fonte12">Visite também: &nbsp;&nbsp; <a style="color: #fff; text-decoration: none" href="https://www.vivaoandroid.com.br/" target="_blank">Viva o Android</a> &nbsp;·&nbsp; <a style="color: #fff; text-decoration: none" href="https://www.vivaolinux.com.br/verBanner.php?codigo=134" target="_blank" rel="nofollow">BR-Linux.org</a> &nbsp;·&nbsp; <a style="color: #fff; text-decoration: none" href="https://www.vivaolinux.com.br/verBanner.php?codigo=135" target="_blank" rel="nofollow">Dicas-L</a> &nbsp;·&nbsp; <a style="color: #fff; text-decoration: none" href="https://www.vivaolinux.com.br/verBanner.php?codigo=506" target="_blank" rel="nofollow">Diolinux</a> &nbsp;·&nbsp; <a style="color: #fff; text-decoration: none" href="https://www.vivaolinux.com.br/verBanner.php?codigo=133" target="_blank" rel="nofollow">SoftwareLivre.org</a> &nbsp;·&nbsp; <a style="color: #fff; text-decoration: none" href="https://www.vivaolinux.com.br/verBanner.php?codigo=131" target="_blank" rel="nofollow">UnderLinux</a> &nbsp;·&nbsp; <a style="color: #fff; text-decoration: none" href="https://www.vivaolinux.com.br/verBanner.php?codigo=565" target="_blank" rel="nofollow">Blog do Edivaldo</a> &nbsp;·&nbsp; <a style="color: #fff; text-decoration: none" href="https://www.vivaolinux.com.br/verBanner.php?codigo=610" target="_blank" rel="nofollow">Sempre Update</a> </p>
+
+
+</div>
+</div>
+
+</div> 
+</div><!--/footer-->
+
+</div>     
+<!--=== End Footer Version 1 ===-->
+</div><!--/wrapper-->
+
+<!-- JS Global Compulsory -->           
+<script src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/jquery-boot-min.js"></script>
+
+<!-- JS Implementing Plugins -->           
+<script type="text/javascript" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/mega-plugins-interna-min.js"></script>
+
+<!-- picture-cut-->
+
+
+<!-- JS Page Level -->           
+<script type="text/javascript" src="Exemplos%20%C3%BAteis%20de%20uso%20do%20comando%20find%20[Dica]_arquivos/js-page-level-min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();
+        App.initSliders();
+        window.prettyPrint && prettyPrint();
+
+	$(".counter").counterUp({
+		delay: 10,
+		time: 3000
+	});
+
+	//$("#banner-sky").replaceWith( $("#google-sky") );	
+	//$("#banner-left").replaceWith( $("#google-left") );
+
+	$('[data-toggle="tooltip"]').tooltip();
+	$('[data-tooltip="tooltip"]').tooltip();
+
+	$("button[type=submit]").attr("data-loading-text", "Enviando...");
+	$("button[data-loading-text]").click(function () {
+        	var btn = $(this).button("loading");
+		setInterval(function () {
+        		btn.button("reset");
+		}, 2000);
+	});
+
+
+	$(".btn-like").click(function(event) {
+		event.preventDefault();
+
+		var botao = $(this);
+
+		var codigo = $(botao).attr("data-codigo");
+		var tabela  = $(botao).attr("data-tabela");
+		var tipo   = $(botao).attr("data-tipo");
+
+		$.ajax({
+			"url": "/like.php",
+			"dataType": "html",
+			"data": {
+				"codigo": codigo,
+				"tabela": tabela,
+				"tipo": tipo
+			},
+			"success": function (r) {
+
+				if (r=="1") {
+					var incr = +($(botao).find(".likeBadge").text());
+					incr += 1;
+					 $(botao).find(".likeBadge").text(incr);
+				}
+			}
+		});
+
+	});
+
+	$('.newsticker').newsTicker({
+		row_height: 120,
+		max_rows: 3,
+		autostart: 1,
+		duration: 4000,
+		pauseOnHover: 0,
+		speed: 1600
+	});
+
+	
+
+	$('div#gad336').removeClass('centro');
+	$('div#gad336').addClass('floatright');
+
+
+    });
+</script>
+<!--[if lt IE 9]>
+    <script src="//static.vivaolinux.com.br/assets/plugins/ie-plugins-min.js"></script>
+<![endif]-->
+	
+<script>
+// -> /include/funcoes3-min.js
+function submeter_busca(a){a.submit}function showHide(a){if(document.getElementById(a).style.display=="none"){document.getElementById(a).style.display=""}else{document.getElementById(a).style.display="none"}}function quote(a){var b=document.getElementById(a).innerHTML;b=b.replace(/(<([^>]+)>)/ig,"");document.formComentario.comentario.value="[quote]"+b+"[/quote]\n\n";document.formComentario.comentario.focus()}
+</script>
+
+<!-- Google Analytics-->
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4140598-1']);
+  _gaq.push(['_setDomainName', 'vivaolinux.com.br']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+/*rejection fix*/
+/*
+(function (tos) {
+	  window.setInterval(function () {
+	    tos = (function (t) {
+	      return t[0] == 50 ? (parseInt(t[1]) + 1) + ':00' : (t[1] || '0') + ':' + (parseInt(t[0]) + 10);
+	    })(tos.split(':').reverse());
+	    window.pageTracker ? pageTracker._trackEvent('Time', 'Log', tos) : _gaq.push(['_trackEvent', 'Time', 'Log', tos]);
+	  }, 10000);
+	})('00');
+*/
+</script>
+<!-- Google Analytics-->
+
+
+<script>
+function leftArrowPressed() {
+	
+}
+
+function rightArrowPressed() {
+	
+}
+
+document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    switch (evt.keyCode) {
+        case 37:
+            leftArrowPressed();
+            break;
+        case 39:
+            rightArrowPressed();
+            break;
+    }
+};
+
+$("textarea").keydown(function() {
+	document.onkeydown = null;
+});
+
+$("textarea").focusout(function() {
+	document.onkeydown = function(evt) {
+	    evt = evt || window.event;
+	    switch (evt.keyCode) {
+		case 37:
+		    leftArrowPressed();
+		    break;
+		case 39:
+		    rightArrowPressed();
+		    break;
+	    }
+	};
+});
+
+
+</script>
+
+
+
+	
+<div id="topcontrol" style="position: fixed; bottom: 5px; right: 5px; opacity: 1; cursor: pointer;" title="Scroll Back to Top"></div></body></html>

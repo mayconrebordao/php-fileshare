@@ -1,0 +1,85 @@
+.maxtext{
+
+    max-width: 150px;
+    max-height: 150px;
+    overflow: hidden;
+}
+
+#menulink{
+  text-decoration: none;
+}
+
+
+.mdl-grid.center-items{
+
+  justify-content: center;
+}
+
+.demo-card-wide.mdl-card {
+    // width: 100%;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 170px;
+  background: url('../imgs/dark-cloud-3.jpgd') center / cover};
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+
+.mdl-card{
+  width: 100%;
+  
+}
+
+..mdl-layout__drawer-button{
+  color: white;
+}
+
+
+.mdl-button--file input {
+  cursor: pointer;
+  height: 100%;
+  right: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 300px;
+  z-index: 4;
+}
+.mdl-textfield--file .mdl-textfield__input {
+  box-sizing: border-box;
+  width: calc(100% - 32px);
+}
+.mdl-textfield--file .mdl-button--file {
+  right: 0;
+
+}
+
+html, body{
+  height: 100%;
+}
+
+// #tudo{
+//   min-height: 100%;
+// }
+
+// * html #tudo{
+//   height: 100%;
+// }
+
+// #tudo {
+//   position: relative;
+// }
+
+// #foot{
+//   position: fixed;
+//   bottom: 0;
+//   width: 100%;
+// }
+// 
+// 
+#foot{
+  bottom: 0;
+}
